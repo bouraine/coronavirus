@@ -1,5 +1,8 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fr">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=500, initial-scale=0.8" />
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -9,12 +12,25 @@
     <style>
       body {
         font-size: 16px;
+        zoom: 100%;
       }
     </style>
     <title>ATTESTATION DE DÉPLACEMENT DÉROGATOIRE</title>
   </head>
-  <body class="container-fluid text">
-    <h3>ATTESTATION DE DÉPLACEMENT DÉROGATOIRE</h3>
+  <body class="container-fluid">
+    <div id="alert" class="alert alert-info mt-5 d-print-none small" role="alert" onclick="dismiss()">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      Nous utilisons les cookies afin de sauvegarder les dernières saisies sur
+      votre machine. Les cookies sont des données qui sont téléchargés ou
+      stockés sur votre ordinateur ou sur tout autre appareil.
+    </div>
+
+    <div class="d-flex justify-content-between mt-5">
+        <h3>ATTESTATION DE DÉPLACEMENT DÉROGATOIRE</h3>
+      <button class="btn btn-primary d-print-none" onclick="printit()">
+        Imprimer
+      </button>
+    </div>
     <p class="my-5">
       En application de l’article 1er du décret du 16 mars 2020 portant
       réglementation des déplacements dans le cadre de la lutte contre la
@@ -22,7 +38,7 @@
     </p>
 
     <div class="m-3">
-      <p>Je sousigné:</p>
+      <p>Je sousigné :</p>
       <div class="mx-5">
         <div class="form-group row mb-4">
           <label class="col-3">Mme / M. : </label>
@@ -56,7 +72,7 @@
       </div>
     </div>
 
-    <div style="margin: 75 20 75 20;">
+    <div style="margin: 75px 20px 75px 20px;">
       <div class="d-flex">
         <input type="checkbox" class="mt-2 mr-2" />
         <label>
@@ -67,18 +83,18 @@
           différés ;</label
         >
       </div>
-      <div class="d-flex mt-5">
+      <div class="d-flex mt-4">
         <input type="checkbox" class="mt-2 mr-2" />
         <label>
           déplacements pour effectuer des achats de première nécessité dans des
           établissements autorisés (liste sur gouvernement.fr);</label
         >
       </div>
-      <div class="d-flex mt-5">
+      <div class="d-flex mt-4">
         <input type="checkbox" class="mt-2 mr-2" />
         <label> déplacements pour motif de santé;</label>
       </div>
-      <div class="d-flex mt-5">
+      <div class="d-flex mt-4">
         <input type="checkbox" class="mt-2 mr-2" />
         <label>
           déplacements pour motif familial impérieux, pour l’assistance aux
@@ -86,7 +102,7 @@
         >
       </div>
 
-      <div class="d-flex mt-5">
+      <div class="d-flex mt-4">
         <input type="checkbox" class="mt-2 mr-2" />
         <label>
           déplacements brefs, à proximité du domicile, liés à l’activité
@@ -116,6 +132,14 @@
     </div>
 
     <script>
+      function dismiss() {
+        document.getElementById("alert").style.display = "none";
+      }
+
+      function printit() {
+        window.print();
+      }
+
       function onChange(input, value) {
         setCookie(input, value, 36000);
       }
