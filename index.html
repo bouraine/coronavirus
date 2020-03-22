@@ -18,19 +18,28 @@
     <title>ATTESTATION DE DÉPLACEMENT DÉROGATOIRE</title>
   </head>
   <body class="container-fluid">
-    <div id="alert" class="alert alert-info mt-5 d-print-none small" role="alert" onclick="dismiss()">
-      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <div
+      id="alert"
+      class="alert alert-info mt-5 d-print-none small"
+      role="alert"
+      onclick="dismiss()"
+    >
+      <a href="#" class="close" data-dismiss="alert" aria-label="close"
+        >&times;</a
+      >
       Nous utilisons les cookies afin de sauvegarder les dernières saisies sur
       votre machine. Les cookies sont des données qui sont téléchargés ou
       stockés sur votre ordinateur ou sur tout autre appareil.
     </div>
 
-    <div class="d-flex justify-content-between mt-5">
-        <h3>ATTESTATION DE DÉPLACEMENT DÉROGATOIRE</h3>
+    <h3>ATTESTATION DE DÉPLACEMENT DÉROGATOIRE</h3>
+
+    <div class="d-flex justify-content-end">
       <button class="btn btn-primary d-print-none" onclick="printit()">
         Imprimer
       </button>
     </div>
+
     <p class="my-5">
       En application de l’article 1er du décret du 16 mars 2020 portant
       réglementation des déplacements dans le cadre de la lutte contre la
@@ -38,43 +47,43 @@
     </p>
 
     <div class="m-3">
-      <p>Je sousigné :</p>
+      <p>Je sousigné(e)</p>
       <div class="mx-5">
         <div class="form-group row mb-4">
-          <label class="col-3">Mme / M. : </label>
+          <label>Mme / M.</label>
           <input
             id="username"
             onchange="onChange('username', this.value)"
-            class="col form-control"
+            class="form-control"
             type="text"
           />
         </div>
 
         <div class="form-group row mb-4">
-          <label class="col-3">Né(e) le : </label>
+          <label>Né(e) le</label>
           <input
             id="birthdate"
             onchange="onChange('birthdate', this.value)"
-            class="col form-control"
+            class="form-control"
             type="text"
           />
         </div>
 
         <div class="form-group row">
-          <label class="col-3">Demeurant : </label>
+          <label>Demeurant</label>
           <input
             id="adress"
             onchange="onChange('adress', this.value)"
-            class="col form-control"
+            class="form-control"
             type="text"
           />
         </div>
       </div>
     </div>
 
-    <div style="margin: 75px 20px 75px 20px;">
+    <div class="mx-4 my-5">
       <div class="d-flex">
-        <input type="checkbox" class="mt-2 mr-2" />
+        <input type="checkbox" class="mt-2 mr-2 form-check-input" />
         <label>
           déplacements entre le domicile et le lieu d’exercice de l’activité
           professionnelle, lorsqu’ils sont indispensables à l’exercice
@@ -84,18 +93,18 @@
         >
       </div>
       <div class="d-flex mt-4">
-        <input type="checkbox" class="mt-2 mr-2" />
+        <input type="checkbox" class="mt-2 mr-2 form-check-input" />
         <label>
           déplacements pour effectuer des achats de première nécessité dans des
           établissements autorisés (liste sur gouvernement.fr);</label
         >
       </div>
       <div class="d-flex mt-4">
-        <input type="checkbox" class="mt-2 mr-2" />
+        <input type="checkbox" class="mt-2 mr-2 form-check-input" />
         <label> déplacements pour motif de santé;</label>
       </div>
       <div class="d-flex mt-4">
-        <input type="checkbox" class="mt-2 mr-2" />
+        <input type="checkbox" class="mt-2 mr-2 form-check-input" />
         <label>
           déplacements pour motif familial impérieux, pour l’assistance aux
           personnes vulnérables ou la garde d’enfants ;</label
@@ -103,7 +112,7 @@
       </div>
 
       <div class="d-flex mt-4">
-        <input type="checkbox" class="mt-2 mr-2" />
+        <input type="checkbox" class="mt-2 mr-2 form-check-input" />
         <label>
           déplacements brefs, à proximité du domicile, liés à l’activité
           physique individuelle des personnes, à l’exclusion de toute pratique
@@ -119,16 +128,30 @@
       propagation du virus Covid-19 :
     </p>
 
-    <div class="d-flex justify-content-end my-5">
-      <label class="mr-2">Fait à : </label>
-      <input
-        id="location"
-        onchange="onChange('location', this.value)"
-        class="mr-5"
-        type="text"
-      />
-      <label class="mr-2">Le : </label>
-      <input id="date" type="text" value="" />
+    <div class="d-flex mx-4 mt-5 mb-3 justify-content-end">
+      <div class="form-group row mb-4 mr-5">
+        <label for="location">Fait à : </label>
+        <input
+          id="location"
+          onchange="onChange('location', this.value)"
+          class="form-control mr-2"
+          type="text"
+        />
+      </div>
+      <div class="form-group row">
+        <label for="date">Le : </label>
+        <input class="form-control" id="date" type="text" value="" />
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-end mr-2">
+      <p>(signature)</p>
+    </div>
+
+    <div class="d-flex justify-content-end mb-5">
+      <button class="btn btn-primary d-print-none" onclick="printit()">
+        Imprimer
+      </button>
     </div>
 
     <script>
